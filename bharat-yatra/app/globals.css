@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  /* charcoal / muted text */
+  --ink: #17212b;
+  --muted: #62707a;
+
+  /* light backgrounds */
+  --paper: #f8f4ea;
+  --paper-soft: #f8f4ea;
+  --cream: #fffcf5;
+
+  /* ocean blue — primary brand color */
+  --indigo: #087ea4;
+  --indigo-deep: #075985;
+  --ocean-bright: #0ea5c9;
+
+  /* accents */
+  --marigold: #f5b800;
+  --marigold-deep: #c99400;
+  --vermilion: #e85219;
+
+  /* deep section / footer */
+  --pine: #0e2a3c;
+  --pine-deep: #0a1f2c;
+
+  --line: rgba(23, 33, 43, 0.12);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-paper: var(--paper);
+  --color-paper-soft: var(--paper-soft);
+  --color-cream: var(--cream);
+  --color-marigold: var(--marigold);
+  --color-marigold-deep: var(--marigold-deep);
+  --color-indigo: var(--indigo);
+  --color-indigo-deep: var(--indigo-deep);
+  --color-ocean-bright: var(--ocean-bright);
+  --color-vermilion: var(--vermilion);
+  --color-pine: var(--pine);
+  --color-pine-deep: var(--pine-deep);
+  --color-line: var(--line);
+
+  --font-display: "Fraunces Variable", ui-serif, Georgia, serif;
+  --font-body: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper-soft);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--marigold);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--vermilion);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+}
+
+.container-edge {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 768px) {
+  .container-edge { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
